@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <header>
+        <h1>To-Do List</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Signup</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="task-container">
+            <h2>Add / Update Task</h2>
+            <div class="task-input">
+                <input type="text" id="task-title" placeholder="Enter task title..." autocomplete="off">
+            </div>
+            <div class="task-input">
+                <textarea id="task-desc" placeholder="Enter task description..."></textarea>
+            </div>
+            <button id="add-task">Add Task</button>
+            <p id="guest-message" class="hidden">
+                <strong>Note:</strong> You can add tasks, but they won't be saved. 
+                <a href="signup.html">Sign up</a> or <a href="login.html">log in</a> to keep track of your tasks.
+            </p>
+
+            <h2>Your Tasks</h2>
+            <ul id="task-list"></ul>
+        </section>
+    </main>
+    
+    <script src="js/home.js"></script>
+</body>
+</html>

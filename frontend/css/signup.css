@@ -1,0 +1,207 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at 50% 100%, #6c63ff 0%, #4c3f95 100%);
+    text-align: center;
+}
+
+header {
+    background: linear-gradient(90deg, #4c3f95, #6c63ff);
+    color: white;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #e0a800;
+}
+
+main {
+    padding: 20px;
+}
+
+.signup-container {
+    position: relative;
+    max-width: 550px;
+    margin: 20px auto;
+    padding: 60px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.signup-container:hover {
+    box-shadow: 0 8px 45px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    margin-bottom: 30px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+h2:hover {
+    color: #6c63ff;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px 20px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 -1px 0 0 transparent;
+    font-family: inherit;
+    font-size: 1em;
+    color: #333;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: inset 0 -1px 0 0 #e0a800;
+    outline: none;
+}
+
+.form-group input.filled,
+.form-group select.filled {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.form-group label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: #6c757d;
+}
+
+.form-group input:focus ~ label,
+.form-group select:focus ~ label {
+    transform: translateY(-120%) scale(0.9);
+    color: #e0a800;
+}
+
+.form-group input.filled ~ label,
+.form-group select.filled ~ label {
+    transform: translateY(-120%) scale(0.9);
+    color: #28a745;
+}
+
+.form-group input::placeholder,
+.form-group select::placeholder {
+    color: transparent;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    margin-top: 30px;
+    background: linear-gradient(45deg, #4c3f95, #6c63ff);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#signup-message {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #d9534f;
+    font-size: 14px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#signup-message.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #e0a800;
+}
+
+@media (max-width: 768px) {
+    .signup-container {
+        padding: 40px 20px;
+        border-radius: 15px;
+    }
+}
+
+
+.form-group input.error-shake, 
+.form-group select.error-shake {
+    animation: shake 0.5s ease;
+} 
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+#signup-message.success {
+    color: #28a745;
+    background: rgba(40, 167, 69, 0.1);
+}
+
+#signup-message.error {
+    color: #dc3545;
+    background: rgba(220, 53, 69, 0.1);
+}
